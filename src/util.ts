@@ -2,7 +2,7 @@ import { Weather, Times } from './state';
 
 export function fetchWeatherInfo(lat: number, lon: number,
     onSuccess: (weather: Weather, times: Times) => void): void {
-    fetch('http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon +
+    fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon +
         '&APPID=89b51f79ad8a8998f6d112c907a9a815&units=imperial').then(
         (response) => {
             return response.json();
