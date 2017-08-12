@@ -28,7 +28,7 @@ export class PlacesAutocomplete extends
         super(props);
         this.placesService = new google.maps.places.AutocompleteService();
         this.geocoder = new google.maps.Geocoder();
-        this.state = { results: [this.CURRENT_LOCATION_TEXT] };
+        this.state = { results: [] };
     }
 
     private onAutocompleteResult = (
@@ -44,7 +44,7 @@ export class PlacesAutocomplete extends
         results: google.maps.GeocoderResult[], status: google.maps.GeocoderStatus
     ) => {
         if (status !== google.maps.GeocoderStatus.OK) {
-            alert(status);
+            console.error(status);
             return;
         }
         this.props.searchSubmit(
@@ -61,7 +61,6 @@ export class PlacesAutocomplete extends
 
     private onNewRequest = (chosenRequest: { text: string }) => {
         // TODO: use place id
-        console.log(chosenRequest);
         if (chosenRequest.text === this.CURRENT_LOCATION_TEXT) {
             this.queryLocation();
         } else {
@@ -78,7 +77,7 @@ export class PlacesAutocomplete extends
         };
         const resultsItems = this.state.results.map(result => (
             {
-                text: this.CURRENT_LOCATION_TEXT,
+                text: result,
                 value: <MenuItem
                     primaryText={result}
                     leftIcon={<MapsPlace />} />,
@@ -92,6 +91,9 @@ export class PlacesAutocomplete extends
                 dataSource={this.menuItems()}
                 onUpdateInput={
                     (searchText: string) => {
+                        if (searchText === '') {
+                            return;
+                        }
                         this.placesService.getPlacePredictions(
                             { input: searchText }, this.onAutocompleteResult);
                     }
@@ -101,6 +103,7 @@ export class PlacesAutocomplete extends
                 hintText={this.props.hintText}
                 textFieldStyle={this.props.textFieldStyle}
                 fullWidth={true}
+                openOnFocus={true}
             />
             <div>
                 <img src={this.GOOGLE_LOGO_SRC} style={{ float: 'right', height: '10px' }} />

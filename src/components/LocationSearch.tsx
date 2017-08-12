@@ -22,7 +22,6 @@ export class LocationSearch extends React.Component<NavBarProps, undefined> {
     }
 
     getCoords = (lat: number, lon: number) => {
-        console.log(lat + ',' + lon);
         this.props.onSearchSubmit(lat, lon);
     }
 }
