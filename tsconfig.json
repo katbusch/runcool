@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "declaration": false,
+        "noEmit": true,
+        "outDir": "./dist/",
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "module": "commonjs",
+        "target": "es6",
+        "jsx": "react",
+        "noImplicitThis": true,
+        "noUnusedLocals": true
+    },
+    "include": [
+        "./src/**/*"
+    ]
+}

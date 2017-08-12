@@ -1,0 +1,52 @@
+{
+    "name": "runwear",
+    "version": "0.1.0",
+    "description": "Simple web app for what to wear on a run",
+    "main": "index.js",
+    "scripts": {
+        "build": "webpack --progress --colors",
+        "test": "mocha -r ts-node/register tests/**",
+        "develop": "webpack-dev-server --open --hot --inline"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/katbusch/runwear.git"
+    },
+    "keywords": [
+        "run",
+        "typescript",
+        "react"
+    ],
+    "author": "Kat Busch",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/katbusch/runwear/issues"
+    },
+    "homepage": "https://github.com/katbusch/runwear#readme",
+    "dependencies": {
+        "@types/googlemaps": "^3.26.16",
+        "@types/material-ui": "^0.17.7",
+        "@types/react": "^15.0.21",
+        "@types/react-dom": "^0.14.23",
+        "@types/react-tap-event-plugin": "^0.0.30",
+        "material-ui": "^0.18.1",
+        "react": "^15.5.4",
+        "react-dom": "^15.5.4",
+        "react-tap-event-plugin": "^2.0.1",
+        "ts-node": "^3.0.2"
+    },
+    "devDependencies": {
+        "@types/chai": "^3.5.2",
+        "@types/mocha": "^2.2.41",
+        "@types/node": "^8.0.20",
+        "awesome-typescript-loader": "^3.1.2",
+        "chai": "^3.5.0",
+        "jshint": "^2.9.4",
+        "mocha": "^3.5.0",
+        "source-map-loader": "^0.2.1",
+        "tslint": "^5.1.0",
+        "typescript": "^2.2.2",
+        "webpack": "^2.4.1",
+        "webpack-dev-server": "^2.4.2"
+    }
+}
