@@ -1,22 +1,43 @@
 <!DOCTYPE html>
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <head>
     <meta charset="UTF-8" />
     <title>RunCool</title>
+    <style>
+        @media (min-width: 712px) {
+            .left-panel {
+                left: 50px;
+            }
+            .right-panel {
+                left: -10px;
+            }
+        }
+        
+        @media (min-width: 500px) {
+            .title-text {
+                font-size: 25px;
+                line-height: 70px;
+            }
+        }
+        
+        @media (max-width: 500px) {
+            .title-text {
+                font-size: 20px;
+            }
+        }
+    </style>
 </head>
 
 <body style="background: #FF5B45">
     <div id="app"></div>
 
     <!-- Dependencies -->
-    <script src="./node_modules/react/dist/react.js"></script>
-    <script src="./node_modules/react-dom/dist/react-dom.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbFYAaiDU14h001KO7FQtx1JlE2MpQ2-k&libraries=places"></script>
 
     <!-- Main -->
     <script src="bundle.js"></script>
-    <!-- TODO add back async & defer -->
 </body>
 
 </html>

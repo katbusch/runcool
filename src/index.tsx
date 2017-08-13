@@ -55,12 +55,11 @@ class App extends React.Component<undefined, State> {
             <MuiThemeProvider muiTheme={getMuiTheme(MuiTheme)}>
                 <div style={{ maxWidth: '780px', margin: 'auto', paddingTop: '40px' }}>
                     <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-                        <div style={
-                            { flexGrow: 2, minWidth: '200px', position: 'relative', left: '50px' }
+                        <div className='left-panel' style={
+                            { flexGrow: 2, minWidth: '200px', position: 'relative' }
                         }>
                             <PaperHolder>
-                                <span style={{ fontSize: '25px', lineHeight: '70px' }}>
-                                    What should I wear on my run?</span>
+                                <span className='title-text'>What should I wear on my run?</span>
                                 <SectionHeader>Run Location</SectionHeader>
                                 <LocationSearch
                                     onSearchSubmit={this.onLatLonChange}
@@ -89,10 +88,9 @@ class App extends React.Component<undefined, State> {
                                 />
                             </PaperHolder>
                         </div>
-                        <div style={
+                        <div className='right-panel' style={
                             {
-                                flexGrow: 1, minWidth: '270px', position: 'relative',
-                                left: '-10px', top: '100px'
+                                flexGrow: 1, minWidth: '270px', position: 'relative', top: '100px'
                             }
                         }>
                             <PaperHolder style={{
